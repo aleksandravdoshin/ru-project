@@ -1,0 +1,27 @@
+# System: MOF with olefins
+#
+
+# Setting minimum distance between atoms of different molecules
+tolerance 3.0
+nloop 10
+# Using PDB file format
+filetype pdb
+
+# Specifying the output file name
+output ru_h2o.pdb
+
+# Ru structure; assuming it should be kept fixed
+structure POSCAR.pdb
+  number 1
+  fixed 0.0 0.0 0.0 0. 0. 0.
+end structure
+
+structure h2o.pdb 
+  number 110
+  inside box 0. 0. 0. 15. 15. 15. 
+end structure
+
+structure cl.pdb 
+  number 2
+  inside box 0. 0. 0. 15. 15. 15. 
+end structure

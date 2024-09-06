@@ -1,0 +1,23 @@
+log             log.NU1000h2o_ru append
+units           real
+atom_style      full
+boundary        p p p
+
+pair_style      lj/cut 12.500
+bond_style      harmonic
+angle_style     hybrid fourier cosine/periodic
+dihedral_style  harmonic
+improper_style  fourier
+
+dielectric      1.0
+special_bonds   lj/coul 0.0 0.0 1.0
+pair_modify     tail yes mix arithmetic
+box tilt        large
+read_data       data.NU1000h2o_ru
+
+#### Atom Groupings ####
+group           1        id   559:583
+group           2        id   584:586
+group           fram     id   1:558 587:1144
+#### END Atom Groupings ####
+
